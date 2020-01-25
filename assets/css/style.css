@@ -1,0 +1,70 @@
+header{
+    color: rgb(247, 240, 247);
+    background-color: navy;
+}
+
+/* #city, #date {
+    font-size: 1.5em;
+} */
+
+footer {
+    color: rgb(247, 240, 247);
+    background-color: navy;
+    border-top: 3px solid rgb(247, 240, 247);
+}
+
+/* adjust the width of the container according to the screen size */
+/* extra small screen */
+@media screen and (max-width: 575px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+/*  small screen */
+@media screen and (min-width: 576px) {
+    .container {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+}
+
+/* medium screen */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+}
+
+/* large screen */
+@media screen and (min-width: 992px) {
+    .container {
+        width: 75%;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+}
+
+/* extra large screen */
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+}
