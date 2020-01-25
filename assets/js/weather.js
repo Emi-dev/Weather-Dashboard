@@ -9,7 +9,7 @@ $(document).ready(function() {
         // get the user input city and assign the value to the variable inputCity
         var inputCity = $("#cityInput").val().trim();
         // assign the API call url for the current weather to the variable queryURL
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + inputCity + "&appid=" + apiKey;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + inputCity + "&appid=" + apiKey;
         console.log("queryURL: " + queryURL);
 
         $.ajax({
@@ -23,7 +23,7 @@ $(document).ready(function() {
             var today = moment().format('l');
             var date = $("<div>").addClass("my-4 p-2 float-left").css("font-size", "1.5em").text(today);   
             // create weather icon division
-            var iconURL = "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
+            var iconURL = "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
             var weatherImg = $("<img>").addClass("float-left").attr("src", iconURL);          
             // create temperature division
             var tempinF = fromKelvinToFahrenheit(response.main.temp);
@@ -66,7 +66,7 @@ $(document).ready(function() {
     });
 
     function createUVDiv(lat, lon) {
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
 
         $.ajax({
             url: uvURL,
@@ -79,7 +79,7 @@ $(document).ready(function() {
     }
 
     function createFiveDayForecast(id) {
-        var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?id=" + id + "&appid=" + apiKey;
+        var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + id + "&appid=" + apiKey;
         console.log(fiveDayURL);
         $.ajax({
             url: fiveDayURL,
@@ -91,7 +91,7 @@ $(document).ready(function() {
                 var currentData = response.list[num];
                 // get date and format
                 var date = moment(currentData.dt_txt).format('MM/DD/YYYY');
-                var iconURL = "http://openweathermap.org/img/wn/" + currentData.weather[0].icon + ".png";
+                var iconURL = "https://openweathermap.org/img/wn/" + currentData.weather[0].icon + ".png";
                 var weatherImg = $("<img>").attr("src", iconURL).css("clear", "both");
                 var tempinF = "Temp: " + fromKelvinToFahrenheit(currentData.main.temp) + "&#8457;";
                 var temp = $("<div>").css("clear", "both").html(tempinF);
