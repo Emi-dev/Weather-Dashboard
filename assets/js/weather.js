@@ -23,7 +23,8 @@ $(document).ready(function() {
     });
 
     // city search history table data event handler
-    $("td").on("click", function(event) {
+    // using the "delegate event" so that the even can fire from the newly dinamically added elements.
+    $(document).on("click", "td", function(event) {
         event.preventDefault();
         // get the city that the user choose to search from the search history
         inputCity = $(this)[0].textContent;
@@ -35,7 +36,7 @@ $(document).ready(function() {
     function createCityWeather() {
        // assign the API call url for the current weather to the variable queryURL
        queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + inputCity + "&appid=" + apiKey;
-       // variable to contain error message in case the input is a invalid city name
+       // variable to contain error message in case the input is an invalid city name
        var errorMsg;
        
        $.ajax({
