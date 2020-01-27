@@ -9,10 +9,12 @@ var cityHistory = JSON.parse(localStorage.getItem("weatherCity"));
 $(document).ready(function() {
     if(cityHistory) {   // if search history exist (in localStorage)
         createSearchHistoryTbl(0);  // display the search history table
+        // display the initial landing page with the last searched city forecast
+        createInitialPage();
     } else {
         cityHistory = [];
     }
-
+ 
     // search button event handler
     $("#searchBtn").on("click", function(event) {
         event.preventDefault();  
@@ -31,6 +33,13 @@ $(document).ready(function() {
         // display the searched city weather
         createCityWeather();
     });
+
+    // function to create the initial landing page with the last searched city weather
+    function createInitialPage() {
+        var tableData = $('td');
+        inputCity = tableData[tableData.length - 1].textContent;
+        createCityWeather();
+    }
 
     // function to make weather AIP call and display the sarch input city weather
     function createCityWeather() {
