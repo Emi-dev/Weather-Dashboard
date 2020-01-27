@@ -21,28 +21,32 @@
 
         <main>
             <div class="container row mx-auto p-0 w-100">
-                <aside class="col-xs-12 col-sm-12 col-lg-4 m-2 p-0">
+                <aside class="col-xs-12 col-sm-12 col-lg-4 mx-2 my-4 p-0">
                     <label for="cityInput" class="d-block">Search for a City</label>
                     <div class="input-group">
                         <input id="cityInput" type="text" class="form-control" placeholder="City Name">
                         <div class="input-group-append">
                           <button id="searchBtn" class="btn btn-sm btn-outline-primary" type="button">Search</button>
                         </div>
-                      </div>
+                    </div>
+                    <div id="errorMsg"> <!-- invalid city error message goes here --> </div>
+                    <div>
+                        <table id="cityHistory" class="table table-bordered mt-2"></table>
+                    </div>
                 </aside>
 
                 <section class="col-xm-12 col-sm-12 col-lg-7 m-2 p-0">
                     <div id="currentWeather" class="m-2">
-                        <!-- <div id="cityWeatherHead" class="row">
-                            <div id="city" class="col-4"></div>
-                            <div id="date" class="col-6"></div>
-                            <img id="img" class="col-2">
+                        <div id="cityWeatherHead" class="row p-2">
+                            <div id="city" class="col-4 mt-4 p-2 float-left"></div>
+                            <div id="date" class="col-4 mt-4 p-2 float-left"></div>
+                            <img id="img" class="col-4 float-left">
                         </div>
                         
                         <div id="temp" class="p-2"></div>
                         <div id="humidity" class="p-2"></div>
                         <div id="wind" class="p-2"></div>
-                        <div id="uv" class="p-2"></div> -->
+                        <div id="uv" class="p-2"></div>
                     </div>
 
                     <div id="fiveDayForecast" class="row mt-4"></div>
