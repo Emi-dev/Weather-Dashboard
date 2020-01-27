@@ -45,7 +45,7 @@ $(document).ready(function() {
             var today = moment().format('l');
             $("#date").text(today);
             // set icon url to the img's "src" attribute
-            var iconURL = "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
+            var iconURL = "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
             $("#img").attr("src", iconURL);
             // set temperature in fahrenheit to the "temp" division html
             var tempinF = ((response.main.temp - 273.15) * 9/5 + 32).toFixed(2);
